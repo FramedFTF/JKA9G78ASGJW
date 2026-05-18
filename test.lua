@@ -2003,7 +2003,7 @@
 				objects[ "name" ] = library:create( "TextLabel" , {
 					FontFace = library.font;
 					Parent = library.cache;
-					TextColor3 = flags["Name_Color"].Color;
+					TextColor3 = (flags["Name_Color"] and flags["Name_Color"].Color) or rgb(255,255,255);
 					BorderColor3 = rgb(0, 0, 0);
 					Text = string.format("%s (@%s)", lp.DisplayName, lp.Name);
 					Name = "\0";
@@ -2080,7 +2080,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, -2);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 					
 					objects[ "2" ] = library:create( "Frame" , {
@@ -2099,7 +2099,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, 1);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 					
 					objects[ "3" ] = library:create( "Frame" , {
@@ -2119,7 +2119,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, -2);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 					
 					objects[ "4" ] = library:create( "Frame" , {
@@ -2139,7 +2139,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, 1);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 					
 					objects[ "5" ] = library:create( "Frame" , {
@@ -2159,7 +2159,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, -2);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 					
 					objects[ "6" ] = library:create( "Frame" , {
@@ -2180,7 +2180,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, 1);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 					
 					objects[ "7" ] = library:create( "Frame" , {
@@ -2200,7 +2200,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, -2);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 					
 					objects[ "7" ] = library:create( "Frame" , {
@@ -2221,7 +2221,7 @@
 						BorderColor3 = rgb(0, 0, 0);
 						Size = dim2(1, -2, 1, 1);
 						BorderSizePixel = 0;
-						BackgroundColor3 = flags["Box_Color"].Color
+						BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 					});
 				-- 
 				
@@ -2339,10 +2339,10 @@
 					objects[ "box_outline" ].Parent = library.cache
 				end 
 
-				objects[ "box_color" ].Color = flags["Box_Color"].Color 
+				objects[ "box_color" ].Color = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 
 				for _, corner in objects[ "corners" ]:GetChildren() do
-					corner.Frame.BackgroundColor3 = flags["Box_Color"].Color
+					corner.Frame.BackgroundColor3 = (flags["Box_Color"] and flags["Box_Color"].Color) or rgb(255,255,255)
 				end
 			end
 
